@@ -1,2 +1,2 @@
-DATABASE_URI = ''
-URL = ''
+DATABASE_URI = ""
+URL = ""
