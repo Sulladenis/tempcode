@@ -19,6 +19,7 @@ class Model(Base):
     __tablename__ = 'model'
     id = Column(Integer, primary_key=True)
     name = Column(String)
+    re = Column(String)
     company = Column(String)
     entry = relationship("Entry", back_populates='model')
 
@@ -31,3 +32,4 @@ class Entry(Base):
     quantity = Column(Integer)
     article_id = Column(Integer, ForeignKey('article.id'))
     article = relationship("Article", back_populates="entry")
+

@@ -22,6 +22,7 @@ class manager:
             num += 1
 
     def select_all_urls(self):
+        """Get all addresses from the database"""
         with self.engine.connect() as conn:
             table = Base.metadata.sorted_tables[0]
             data = conn.execute(select([table.c.url]))
