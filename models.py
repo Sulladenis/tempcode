@@ -23,13 +23,11 @@ class Model(Base):
     company = Column(String)
     entry = relationship("Entry", back_populates='model')
 
-
 class Entry(Base):
     __tablename__ = 'entry'
-    id = Column(Integer, primary_key=True)
-    model_id = Column(Integer, ForeignKey('model.id'))
+    model_id = Column(Integer, ForeignKey('model.id'), primary_key=True)
     model = relationship("Model", back_populates="entry")
     quantity = Column(Integer)
-    article_id = Column(Integer, ForeignKey('article.id'))
+    article_id = Column(Integer, ForeignKey('article.id'), primary_key=True)
     article = relationship("Article", back_populates="entry")
 
